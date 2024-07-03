@@ -60,7 +60,7 @@ isolatedDecl({
 3. If errors are encountered and `forceGenerate` is false, it will log the errors and skip generation for that file.
 4. Generated declaration files are written to the specified `outdir` with a `.d.ts` extension.
 
-## Comparison with bun-plugin-dts
+## Comparison with [`bun-plugin-dts`](https://github.com/wobsoriano/bun-plugin-dts)
 
 While both plugins aim to generate declaration files, they have some key differences:
 
