@@ -28,8 +28,12 @@ jobs:
       - name: update version
         shell: bash
         run: |
+          # get the version from the tag
           VERSION=$(echo $GITHUB_REF | sed 's/refs\/tags\/v//')
-          jq '.version = $VERSION' package.json > package.json.tmp
+          # remove the v prefix
+          VERSION=$(echo $VERSION | sed 's/v//')
+          # update the version in package.json
+          jq ".version = \"$VERSION\"" package.json > package.json.tmp
           mv package.json.tmp package.json
       - run: npm publish
         env:
