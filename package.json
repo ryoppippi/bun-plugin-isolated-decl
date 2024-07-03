@@ -1,10 +1,28 @@
 {
 	"name": "bun-plugin-isolated-decl",
 	"type": "module",
-	"module": "index.ts",
+	"version": "0.1.0",
+	"author": "@ryoppippi",
+	"license": "MIT",
+	"homepage": "https://github.com/ryoppippi/bun-plugin-isolated-decl",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ryoppippi/bun-plugin-isolated-decl"
+	},
+	"keywords": [
+		"bun",
+		"oxc",
+		"dts",
+		"bun-plugin",
+		"bun-plugin-isolated-decl"
+	],
 	"exports": {
 		".": "./index.ts"
 	},
+	"module": "index.ts",
+	"files": [
+		"index.ts"
+	],
 	"scripts": {
 		"lint": "eslint --cache .",
 		"format": "npm run lint -- --fix"
