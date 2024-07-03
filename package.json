@@ -7,7 +7,7 @@
 	"homepage": "https://github.com/ryoppippi/bun-plugin-isolated-decl",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ryoppippi/bun-plugin-isolated-decl"
+		"url": "git+https://github.com/ryoppippi/bun-plugin-isolated-decl.git"
 	},
 	"keywords": [
 		"bun",
