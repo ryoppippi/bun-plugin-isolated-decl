@@ -1,4 +1,5 @@
 # bun-plugin-isolated-decl
+
 ![NPM Version](https://img.shields.io/npm/v/bun-plugin-isolated-decl)
 
 A Bun plugin for generating isolated declaration files (.d.ts) from TypeScript sources using the oxc-transformer. This is the Bun-specific version of [unplugin-isolated-decl](https://github.com/unplugin/unplugin-isolated-decl).
@@ -20,15 +21,11 @@ bun add -d bun-plugin-isolated-decl
 
 ## Usage
 
-1. Import the plugin in your Bun build script:
+Add the plugin to your Bun build configuration:
 
 ```typescript
 import isolatedDecl from 'bun-plugin-isolated-decl';
-```
 
-2. Add the plugin to your Bun build configuration:
-
-```typescript
 await Bun.build({
 	entrypoints: ['./index.ts'],
 	outdir: './dist',
@@ -83,7 +80,7 @@ While both plugins aim to generate declaration files, they have some key differe
 
 ## Relationship to [`unplugin-isolated-decl`](https://github.com/unplugin/unplugin-isolated-decl/tree/main)
 
-`bun-plugin-isolated-decl` is the Bun-specific implementation of [ `unplugin-isolated-decl` ](https://github.com/unplugin/unplugin-isolated-decl). 
+`bun-plugin-isolated-decl` is the Bun-specific implementation of [ `unplugin-isolated-decl` ](https://github.com/unplugin/unplugin-isolated-decl).
 
 ## License
 

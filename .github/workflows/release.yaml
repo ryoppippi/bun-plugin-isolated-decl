@@ -6,7 +6,7 @@ env:
 on:
   push:
     tags:
-      - "v*"
+      - 'v*'
   workflow_dispatch:
 
 permissions:
@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v4
         env:
           node-version: ${{ env.NODE_VERSION }}
-          registry-url: "https://registry.npmjs.org"
+          registry-url: 'https://registry.npmjs.org'
       - run: bun i
       - name: update version
         shell: bash

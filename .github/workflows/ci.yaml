@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - run: bun i
+      - run: bun run lint
+
+  publish-dry-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - run: bun i
+      - name: npm publish dry-run
+        run: npm publish --dry-run
+      - name: upload to pkg.pr.now
+        run: bunx pkg-pr-new publish
+
+  action-timeline:
+    needs:
+      - lint
+      - publish-dry-run
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Kesin11/actions-timeline@v2
