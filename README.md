@@ -14,8 +14,10 @@ A Bun plugin for generating isolated declaration files (.d.ts) from TypeScript s
 
 ## Installation
 
+Install the plugin and its peer dependencies:
+
 ```bash
-bun add -d bun-plugin-isolated-decl
+bun add -d bun-plugin-isolated-decl typescript oxc-transform
 ```
 
 ## Usage
