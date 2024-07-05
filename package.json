@@ -33,6 +33,7 @@
 	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config",
+		"@tsconfig/bun": "^1.0.7",
 		"@types/bun": "latest",
 		"eslint": "^9.6.0",
 		"eslint-plugin-format": "^0.1.2",
