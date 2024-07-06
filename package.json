@@ -28,14 +28,17 @@
 		"format": "npm run lint -- --fix"
 	},
 	"peerDependencies": {
-		"typescript": "^5.5.3",
-		"oxc-transform": "^0.16.3"
+		"oxc-transform": "^0.16.3",
+		"typescript": "^5.5.3"
+	},
+	"dependencies": {
+		"oxc-transform": "^0.16.3",
+		"unplugin-isolated-decl": "^0.4.1"
 	},
 	"devDependencies": {
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config",
 		"@types/bun": "latest",
 		"eslint": "^9.6.0",
-		"eslint-plugin-format": "^0.1.2",
-		"oxc-transform": "^0.16.3"
+		"eslint-plugin-format": "^0.1.2"
 	}
 }

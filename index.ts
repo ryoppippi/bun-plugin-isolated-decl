@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { isolatedDeclaration } from 'oxc-transform';
+import { oxcTransform } from 'unplugin-isolated-decl/api';
 import type { BunPlugin } from 'bun';
 
 export type TransformResult = {
@@ -20,10 +20,6 @@ type Options = {
 	forceGenerate?: boolean;
 };
 
-export function oxcTransform({ id, source }: Entry): TransformResult {
-	return isolatedDeclaration(id, source);
-}
-
 function isolatedDecl(options: Options = {}): BunPlugin {
 	return ({
 		name: 'bun-plugin-isolated-decl',
@@ -40,7 +36,7 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 
 			await Promise.all(
 				entriies.map(async ({ id, source }) => {
-					const { sourceText, errors } = oxcTransform({ id, source });
+					const { sourceText, errors } = oxcTransform(id, source);
 					if (errors.length > 0) {
 						console.error(`Error in ${id}`);
 						for (const error of errors) {
