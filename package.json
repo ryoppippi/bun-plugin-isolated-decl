@@ -28,11 +28,11 @@
 		"format": "npm run lint -- --fix"
 	},
 	"peerDependencies": {
-		"oxc-transform": "^0.17.0",
+		"oxc-transform": "^0.17.1",
 		"typescript": "^5.5.3"
 	},
 	"dependencies": {
-		"oxc-transform": "^0.17.0",
+		"oxc-transform": "^0.17.1",
 		"unplugin-isolated-decl": "^0.4.1"
 	},
 	"devDependencies": {
