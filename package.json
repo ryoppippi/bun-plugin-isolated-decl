@@ -29,7 +29,7 @@
 	},
 	"peerDependencies": {
 		"oxc-transform": "^0.21.0",
-		"typescript": "^5.5.3"
+		"typescript": "^5.5.4"
 	},
 	"dependencies": {
 		"oxc-transform": "^0.21.0",
