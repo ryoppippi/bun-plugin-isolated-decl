@@ -1,0 +1,7 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`build 1`] = `
+"export type Str = string;
+export declare function hello(s: Str): Str;
+"
+`;
