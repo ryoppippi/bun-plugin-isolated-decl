@@ -33,7 +33,7 @@ await Bun.build({
 });
 ```
 
-You can also check the example script: [build.ts](./build.ts).
+You can also check the example script: [tests](./tests/).
 
 ### Options
 
