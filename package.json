@@ -26,6 +26,7 @@
 	"scripts": {
 		"lint": "eslint --cache .",
 		"format": "npm run lint -- --fix"
+		"prepare": "git config diff.lockb.textconv bun && git config diff.lockb.binary true"
 	},
 	"peerDependencies": {
 		"oxc-transform": "^0.22.1",
