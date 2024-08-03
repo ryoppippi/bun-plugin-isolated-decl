@@ -25,7 +25,8 @@
 	],
 	"scripts": {
 		"typecheck": "tsc --noEmit",
-		"release": "nr typecheck && nlx bumpp && npm publish",
+		"test": "bun test",
+		"release": "nr test && nr typecheck && nlx bumpp && npm publish",
 		"lint": "eslint --cache .",
 		"format": "nr lint --fix",
 		"prepare": "git config diff.lockb.textconv bun && git config diff.lockb.binary true"
