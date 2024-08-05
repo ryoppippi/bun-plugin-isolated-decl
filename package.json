@@ -29,7 +29,7 @@
 		"release": "nr test && nr typecheck && nlx bumpp && npm publish",
 		"lint": "eslint --cache .",
 		"format": "nr lint --fix",
-		"prepare": "git config diff.lockb.textconv bun && git config diff.lockb.binary true"
+		"prepare": "nlx bunpare"
 	},
 	"peerDependencies": {
 		"oxc-transform": "^0.23.0",
