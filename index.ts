@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { oxcTransform } from 'unplugin-isolated-decl/api';
-import { type BunPlugin, Glob } from 'bun';
+import { $, type BunPlugin, Glob } from 'bun';
 
 // @ts-expect-error no type
 import _isGlob from 'is-glob';
@@ -35,6 +35,8 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 			const outdir = (build.config?.outdir ?? './out');
 			const resolvedOptions = { forceGenerate: false, ...options } satisfies Options;
 
+			await $`mkdir -p ${outdir}`;
+
 			for (const entry of entrypoints) {
 				if (isGlob(entry)) {
 					const globs = new Glob(entry);
@@ -59,26 +61,28 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 				}
 			}
 
-			await Promise.all(
-				entriies.map(async ({ id, source }) => {
-					const { sourceText, errors } = oxcTransform(id, source);
-					if (errors.length > 0) {
-						console.error(`Error in ${id}`);
-						for (const error of errors) {
-							console.error(error);
-						}
-						/* If there are errors, we don't want to generate declaration files */
-						if (!resolvedOptions.forceGenerate) {
-							return;
-						}
+			for (const { id, source } of entriies) {
+				const { sourceText, errors } = oxcTransform(id, source);
+				if (errors.length > 0) {
+					console.error(`Error in ${id}`);
+					for (const error of errors) {
+						console.error(error);
 					}
+					/* If there are errors, we don't want to generate declaration files */
+					if (!resolvedOptions.forceGenerate) {
+						continue;
+					}
+				}
 
-					const dtsID = id
-						.replace(/^.*\//, '')
-						.replace(/\.[jtm]s$/, '.d.ts');
-					return Bun.write(path.resolve(outdir, dtsID), sourceText);
-				}),
-			);
+				const dtsID = id
+					.replace(/^.*\//, '')
+					.replace(/\.[jtm]s$/, '.d.ts');
+
+				const _path = path.resolve(outdir, dtsID);
+
+				await $`touch ${_path}`;
+				await $`echo ${sourceText} > ${_path}`;
+			}
 		},
 	});
 }
