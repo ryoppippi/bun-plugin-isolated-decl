@@ -39,12 +39,22 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 				if (isGlob(entry)) {
 					const globs = new Glob(entry);
 					for await (const entry of globs.scan()) {
-						const source = await Bun.file(entry).text();
+						const file = Bun.file(entry);
+						if (!await file.exists()) {
+							console.error(`File ${entry} does not exist`);
+							continue;
+						}
+						const source = await file.text();
 						entriies.push({ id: entry, source });
 					}
 				}
 				else {
-					const source = await Bun.file(entry).text();
+					const file = Bun.file(entry);
+					if (!await file.exists()) {
+						console.error(`File ${entry} does not exist`);
+						continue;
+					}
+					const source = await file.text();
 					entriies.push({ id: entry, source });
 				}
 			}
