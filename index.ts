@@ -32,7 +32,7 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 		async setup(build): Promise<void> {
 			const entrypoints = [...build.config.entrypoints].sort();
 			const entriies: Entry[] = [];
-			const outdir = (build.config?.outdir ?? './dist');
+			const outdir = (build.config?.outdir ?? './out');
 			const resolvedOptions = { forceGenerate: false, ...options } satisfies Options;
 
 			for (const entry of entrypoints) {
