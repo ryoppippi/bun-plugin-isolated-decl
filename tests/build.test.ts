@@ -21,3 +21,22 @@ test('build', async () => {
 	const outputDts = await $`cat ${path.resolve(dist, 'main.d.ts')}`.text();
 	expect(outputDts).toMatchSnapshot();
 });
+
+test('build with glob path', async () => {
+	const input = path.resolve(__dirname, 'fixtures/*.ts');
+	const dist = path.resolve(__dirname, 'out');
+
+	await $`rm -rf ${dist}`;
+
+	await Bun.build({
+		entrypoints: [input],
+		outdir: dist,
+		minify: false,
+		plugins: [dts()],
+		target: 'bun',
+		external: ['*'],
+	});
+
+	const outputDts = await $`cat ${path.resolve(dist, 'main.d.ts')}`.text();
+	expect(outputDts).toMatchSnapshot();
+});

@@ -5,3 +5,9 @@ exports[`build 1`] = `
 export declare function hello(s: Str): Str;
 "
 `;
+
+exports[`build with glob path 1`] = `
+"export type Str = string;
+export declare function hello(s: Str): Str;
+"
+`;

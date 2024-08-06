@@ -1,6 +1,12 @@
 import path from 'node:path';
 import { oxcTransform } from 'unplugin-isolated-decl/api';
-import type { BunPlugin } from 'bun';
+import { type BunPlugin, Glob } from 'bun';
+
+// @ts-expect-error no type
+import _isGlob from 'is-glob';
+
+// eslint-disable-next-line ts/no-unsafe-assignment
+const isGlob: (str: string) => boolean = _isGlob;
 
 export type TransformResult = {
 	sourceText: string;
@@ -30,8 +36,17 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 			const resolvedOptions = { forceGenerate: false, ...options } satisfies Options;
 
 			for (const entry of entrypoints) {
-				const source = await Bun.file(entry).text();
-				entriies.push({ id: entry, source });
+				if (isGlob(entry)) {
+					const globs = new Glob(entry);
+					for await (const entry of globs.scan()) {
+						const source = await Bun.file(entry).text();
+						entriies.push({ id: entry, source });
+					}
+				}
+				else {
+					const source = await Bun.file(entry).text();
+					entriies.push({ id: entry, source });
+				}
 			}
 
 			await Promise.all(
@@ -51,7 +66,7 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 					const dtsID = id
 						.replace(/^.*\//, '')
 						.replace(/\.[jtm]s$/, '.d.ts');
-					return Bun.write(path.join(outdir, dtsID), sourceText);
+					return Bun.write(path.resolve(outdir, dtsID), sourceText);
 				}),
 			);
 		},
