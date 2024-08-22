@@ -83,7 +83,7 @@ While both plugins aim to generate declaration files, they have some key differe
 
 ## License
 
-MIT License
+ISC License
 
 ## Author
 

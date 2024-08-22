@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "0.1.4",
 	"author": "@ryoppippi",
-	"license": "MIT",
+	"license": "ISC",
 	"homepage": "https://github.com/ryoppippi/bun-plugin-isolated-decl",
 	"repository": {
 		"type": "git",
