@@ -1,8 +1,5 @@
 name: release
 
-env:
-  DENO_VERSION: 1.x
-
 on:
   push:
     tags:
@@ -18,9 +15,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: denoland/setup-deno@v1
+      - uses: oven-sh/setup-bun@v2
         with:
-          deno-version: ${{ env.DENO_VERSION }}
-      - run: deno run -A npm:changelogithub
+          bun-version: latest
+      - run: bun x changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
