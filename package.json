@@ -32,10 +32,12 @@
 		"prepare": "nlx bunpare"
 	},
 	"peerDependencies": {
+		"is-glob": "^4.0.3",
 		"oxc-transform": "^0.30.0",
 		"typescript": "^5.6.2"
 	},
 	"dependencies": {
+		"is-glob": "^4.0.3",
 		"oxc-transform": "^0.30.0",
 		"unplugin-isolated-decl": "^0.4.7"
 	},
@@ -45,6 +47,5 @@
 		"@types/bun": "latest",
 		"eslint": "^9.11.0",
 		"eslint-plugin-format": "^0.1.2",
-		"is-glob": "^4.0.3"
 	}
 }
