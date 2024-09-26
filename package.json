@@ -32,11 +32,11 @@
 		"prepare": "nlx bunpare"
 	},
 	"peerDependencies": {
-		"oxc-transform": "^0.29.0",
+		"oxc-transform": "^0.30.0",
 		"typescript": "^5.6.2"
 	},
 	"dependencies": {
-		"oxc-transform": "^0.29.0",
+		"oxc-transform": "^0.30.0",
 		"unplugin-isolated-decl": "^0.4.7"
 	},
 	"devDependencies": {
