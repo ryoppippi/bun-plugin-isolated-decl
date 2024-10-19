@@ -7,10 +7,10 @@ A Bun plugin for generating isolated declaration files (.d.ts) from TypeScript s
 ## Features
 
 - ⚡ **Ultra-Fast**: Generates `.d.ts` files significantly faster than `tsc`
-- 🔧 **Powered by oxc**: Utilizes the efficient [`oxc-transformer`](https://www.npmjs.com/package/oxc-transform) for blazing-fast performance
+- 🔧 **Powered by oxc**: Utilises the efficient [`oxc-transformer`](https://www.npmjs.com/package/oxc-transform) for blazing-fast performance
 - 🔌 **Bun Integration**: Seamlessly integrates with Bun's build process
 - 🚀 **Zero Config**: Works out of the box with no configuration required
-- 🎯 **Focused Functionality**: Optimized for TypeScript 5.5's isolatedDeclarations option
+- 🎯 **Focused Functionality**: Optimised for TypeScript 5.5's isolatedDeclarations option
 - 🔄 **Ecosystem Compatibility**: Bun version of [`unplugin-isolated-decl`](https://github.com/unplugin/unplugin-isolated-decl/tree/main)
 
 ## Installation
@@ -65,11 +65,11 @@ While both plugins aim to generate declaration files, they have some key differe
 2. **Compatibility**:
 
    - `bun-plugin-dts` uses tsc and can generate types for all TypeScript code.
-   - `bun-plugin-isolated-decl` is optimized for and limited to source code that is compatible with TypeScript 5.5's isolatedDeclarations option.
+   - `bun-plugin-isolated-decl` is optimised for and limited to source code that is compatible with TypeScript 5.5's isolatedDeclarations option.
 
 3. **Use Case**:
    - Choose `bun-plugin-dts` if you need comprehensive type generation for all TypeScript features.
-   - Choose `bun-plugin-isolated-decl` if you prioritize speed and your codebase is compatible with isolated declarations.
+   - Choose `bun-plugin-isolated-decl` if you prioritise speed and your codebase is compatible with isolated declarations.
 
 ## Limitations and Advantages
 
@@ -81,9 +81,9 @@ While both plugins aim to generate declaration files, they have some key differe
 
 `bun-plugin-isolated-decl` is the Bun-specific implementation of [ `unplugin-isolated-decl` ](https://github.com/unplugin/unplugin-isolated-decl).
 
-## License
+## Licence
 
-ISC License
+ISC Licence
 
 ## Author
 
