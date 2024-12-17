@@ -8,7 +8,7 @@ import { oxcTransform } from 'unplugin-isolated-decl/api';
 const isGlob: (str: string) => boolean = _isGlob;
 
 export type TransformResult = {
-	sourceText: string;
+	code: string;
 	errors: string[];
 };
 
