@@ -44,6 +44,6 @@
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config",
 		"@types/bun": "latest",
 		"eslint": "^9.17.0",
-		"eslint-plugin-format": "^0.1.3"
+		"eslint-plugin-format": "^1.0.1"
 	}
 }
