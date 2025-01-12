@@ -32,7 +32,7 @@
 		"prepare": "nlx bunpare"
 	},
 	"peerDependencies": {
-		"typescript": "^5.7.2"
+		"typescript": "^5.7.3"
 	},
 	"dependencies": {
 		"is-glob": "^4.0.3",
