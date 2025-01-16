@@ -1,15 +1,14 @@
 import path from 'node:path';
-import { oxcTransform } from 'unplugin-isolated-decl/api';
 import { $, type BunPlugin, Glob } from 'bun';
-
 // @ts-expect-error no type
 import _isGlob from 'is-glob';
+import { oxcTransform } from 'unplugin-isolated-decl/api';
 
 // eslint-disable-next-line ts/no-unsafe-assignment
 const isGlob: (str: string) => boolean = _isGlob;
 
 export type TransformResult = {
-	sourceText: string;
+	code: string;
 	errors: string[];
 };
 
@@ -27,13 +26,16 @@ type Options = {
 };
 
 function isolatedDecl(options: Options = {}): BunPlugin {
-	return ({
+	return {
 		name: 'bun-plugin-isolated-decl',
 		async setup(build): Promise<void> {
 			const entrypoints = [...build.config.entrypoints].sort();
 			const entriies: Entry[] = [];
-			const outdir = (build.config?.outdir ?? './out');
-			const resolvedOptions = { forceGenerate: false, ...options } satisfies Options;
+			const outdir = build.config?.outdir ?? './out';
+			const resolvedOptions = {
+				forceGenerate: false,
+				...options,
+			} satisfies Options;
 
 			await $`mkdir -p ${outdir}`;
 
@@ -42,7 +44,7 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 					const globs = new Glob(entry);
 					for await (const entry of globs.scan()) {
 						const file = Bun.file(entry);
-						if (!await file.exists()) {
+						if (!(await file.exists())) {
 							console.error(`File ${entry} does not exist`);
 							continue;
 						}
@@ -52,7 +54,7 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 				}
 				else {
 					const file = Bun.file(entry);
-					if (!await file.exists()) {
+					if (!(await file.exists())) {
 						console.error(`File ${entry} does not exist`);
 						continue;
 					}
@@ -62,7 +64,7 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 			}
 
 			for (const { id, source } of entriies) {
-				const { sourceText, errors } = oxcTransform(id, source);
+				const { code, errors } = await oxcTransform(id, source);
 				if (errors.length > 0) {
 					console.error(`Error in ${id}`);
 					for (const error of errors) {
@@ -74,17 +76,15 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 					}
 				}
 
-				const dtsID = id
-					.replace(/^.*\//, '')
-					.replace(/\.[jtm]s$/, '.d.ts');
+				const dtsID = id.replace(/^.*\//, '').replace(/\.[jtm]s$/, '.d.ts');
 
 				const _path = path.resolve(outdir, dtsID);
 
 				await $`touch ${_path}`;
-				await $`echo ${sourceText} > ${_path}`;
+				await $`echo ${code} > ${_path}`;
 			}
 		},
-	});
+	};
 }
 
 export default isolatedDecl;
