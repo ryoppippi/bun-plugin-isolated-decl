@@ -28,8 +28,7 @@
 		"test": "bun test",
 		"release": "nr test && nr typecheck && nlx bumpp && npm publish",
 		"lint": "eslint --cache .",
-		"format": "nr lint --fix",
-		"prepare": "nlx bunpare"
+		"format": "nr lint --fix"
 	},
 	"peerDependencies": {
 		"typescript": "^5.7.3"
