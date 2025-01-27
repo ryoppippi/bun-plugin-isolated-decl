@@ -5,7 +5,7 @@
       "name": "bun-plugin-isolated-decl",
       "dependencies": {
         "is-glob": "^4.0.3",
-        "oxc-transform": "^0.48.0",
+        "oxc-transform": "^0.48.1",
         "unplugin-isolated-decl": "^0.10.5",
       },
       "devDependencies": {
