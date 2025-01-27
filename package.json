@@ -27,6 +27,7 @@
 		"typecheck": "tsc --noEmit",
 		"test": "bun test",
 		"release": "nr test && nr typecheck && nlx bumpp",
+		"prepublishOnly": "nr test && nr typecheck",
 		"lint": "eslint --cache .",
 		"format": "nr lint --fix"
 	},
