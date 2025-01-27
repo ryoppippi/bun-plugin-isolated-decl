@@ -26,7 +26,7 @@
 	"scripts": {
 		"typecheck": "tsc --noEmit",
 		"test": "bun test",
-		"release": "nr test && nr typecheck && nlx bumpp && npm publish",
+		"release": "nr test && nr typecheck && nlx bumpp",
 		"lint": "eslint --cache .",
 		"format": "nr lint --fix"
 	},
