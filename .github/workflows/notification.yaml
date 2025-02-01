@@ -1,7 +1,7 @@
 name: Create ReleaseIssue
 on:
   schedule:
-    - cron:  "0 0 */14 * *"
+    - cron: '0 0 */14 * *'
 
 jobs:
   create_issue:
@@ -13,9 +13,9 @@ jobs:
       - name: Create team sync issue
         uses: imjohnbo/issue-bot@v3.4
         with:
-          assignees: "ryoppippi"
-          labels: "Type: Release"
-          title: "Next Release"
+          assignees: ryoppippi
+          labels: 'Type: Release'
+          title: Next Release
           body: |
             ### New Release
             # - [ ] Check if there are any PRs that have been forgotten to merge
@@ -25,4 +25,3 @@ jobs:
           close-previous: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
