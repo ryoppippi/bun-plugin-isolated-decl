@@ -43,7 +43,7 @@
 		"@antfu/ni": "^23.3.1",
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config",
 		"@types/bun": "latest",
-		"eslint": "^9.20.0",
+		"eslint": "^9.20.1",
 		"eslint-plugin-format": "^1.0.1"
 	}
 }
