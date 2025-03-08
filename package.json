@@ -37,7 +37,7 @@
 	"dependencies": {
 		"is-glob": "^4.0.3",
 		"oxc-transform": "^0.55.0",
-		"unplugin-isolated-decl": "^0.13.0"
+		"unplugin-isolated-decl": "^0.13.1"
 	},
 	"devDependencies": {
 		"@antfu/ni": "^23.3.1",
