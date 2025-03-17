@@ -9,7 +9,7 @@
         "unplugin-isolated-decl": "^0.13.3",
       },
       "devDependencies": {
-        "@antfu/ni": "^24.1.0",
+        "@antfu/ni": "^24.2.0",
         "@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config",
         "@types/bun": "latest",
         "eslint": "^9.22.0",
@@ -25,7 +25,7 @@
 
     "@antfu/install-pkg": ["@antfu/install-pkg@1.0.0", "", { "dependencies": { "package-manager-detector": "^0.2.8", "tinyexec": "^0.3.2" } }, "sha512-xvX6P/lo1B3ej0OsaErAjqgFYzYVcJpamjLAFLYh9vRJngBrMoUG7aVnrGTeqM7yxbyTD5p3F2+0/QUEh8Vzhw=="],
 
-    "@antfu/ni": ["@antfu/ni@24.1.0", "", { "dependencies": { "ansis": "^3.17.0", "fzf": "^0.5.2", "package-manager-detector": "^1.0.0", "tinyexec": "^0.3.2" }, "bin": { "ni": "bin/ni.mjs", "nci": "bin/nci.mjs", "nr": "bin/nr.mjs", "nu": "bin/nu.mjs", "nlx": "bin/nlx.mjs", "na": "bin/na.mjs", "nun": "bin/nun.mjs" } }, "sha512-Pq54C1N16BjLX4aHd7VJiuqxl+KoT9wOSyAZSnC2qDf1MraZ2c2b6FldjfeNsP1HBPvNhlCmZI91bNdmwXuuWQ=="],
+    "@antfu/ni": ["@antfu/ni@24.2.0", "", { "dependencies": { "ansis": "^3.17.0", "fzf": "^0.5.2", "package-manager-detector": "^1.0.0", "tinyexec": "^0.3.2" }, "bin": { "ni": "bin/ni.mjs", "nci": "bin/nci.mjs", "nr": "bin/nr.mjs", "nu": "bin/nu.mjs", "nlx": "bin/nlx.mjs", "na": "bin/na.mjs", "nun": "bin/nun.mjs" } }, "sha512-+B9wzpv+KOhqbOgHjHcBAX7IwIKdDt4SFzYlxIPr4srANFJfjAABC7nU8KNFba+DYLymRe2EPSUfE7+reJb5UA=="],
 
     "@antfu/utils": ["@antfu/utils@0.7.10", "", {}, "sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww=="],
 
