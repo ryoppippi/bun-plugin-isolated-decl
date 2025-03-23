@@ -40,7 +40,7 @@
 		"unplugin-isolated-decl": "^0.13.4"
 	},
 	"devDependencies": {
-		"@antfu/ni": "^24.2.0",
+		"@antfu/ni": "^24.3.0",
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config",
 		"@types/bun": "latest",
 		"eslint": "^9.22.0",
