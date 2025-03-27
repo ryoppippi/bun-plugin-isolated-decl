@@ -1,4 +1,4 @@
-import { writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { type BunPlugin, Glob } from 'bun';
 // @ts-expect-error no type
@@ -77,8 +77,10 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 				}
 				const root = build.config?.root ?? '';
 				const dtsID = path.relative(root, id.replace(/^.*\s/, '').replace(/\.[jtm]s$/, '.d.ts'));
-				const _path = path.join(outdir, dtsID);
-				await writeFile(_path, code, { flag: 'w' });
+				const _savepath = path.resolve(outdir, dtsID);
+				const _dirpath = path.dirname(_savepath);
+				await mkdir(_dirpath, { recursive: true });
+				await writeFile(_savepath, code);
 			}
 		},
 	};
