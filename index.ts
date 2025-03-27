@@ -1,5 +1,6 @@
+import { writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { $, type BunPlugin, Glob } from 'bun';
+import { type BunPlugin, Glob } from 'bun';
 // @ts-expect-error no type
 import _isGlob from 'is-glob';
 import { oxcTransform } from 'unplugin-isolated-decl/api';
@@ -23,7 +24,7 @@ type Entry = {
 type Options = {
 	/** generate declaration files even though there are errors */
 	forceGenerate?: boolean;
-    outdir?: string;
+	outdir?: string;
 };
 
 function isolatedDecl(options: Options = {}): BunPlugin {
@@ -32,13 +33,11 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 		async setup(build): Promise<void> {
 			const entrypoints = [...build.config.entrypoints].sort();
 			const entriies: Entry[] = [];
-			const outdir = options.outdir ? options.outdir : build.config?.outdir ?? './out';
+			const outdir = (options.outdir != null) ? options.outdir : build.config?.outdir ?? './out';
 			const resolvedOptions = {
 				forceGenerate: false,
 				...options,
 			} satisfies Options;
-
-			await $`mkdir -p ${outdir}`;
 
 			for (const entry of entrypoints) {
 				if (isGlob(entry)) {
@@ -76,13 +75,10 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 						continue;
 					}
 				}
-
-				const dtsID = id.replace(/^.*\//, '').replace(/\.[jtm]s$/, '.d.ts');
-
-				const _path = path.resolve(outdir, dtsID);
-
-				await $`touch ${_path}`;
-				await $`echo ${code} > ${_path}`;
+				const root = build.config?.root ?? '';
+				const dtsID = path.relative(root, id.replace(/^.*\s/, '').replace(/\.[jtm]s$/, '.d.ts'));
+				const _path = path.join(outdir, dtsID);
+				await writeFile(_path, code, { flag: 'w' });
 			}
 		},
 	};
