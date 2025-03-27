@@ -23,6 +23,7 @@ type Entry = {
 type Options = {
 	/** generate declaration files even though there are errors */
 	forceGenerate?: boolean;
+    outdir?: string;
 };
 
 function isolatedDecl(options: Options = {}): BunPlugin {
@@ -31,7 +32,7 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 		async setup(build): Promise<void> {
 			const entrypoints = [...build.config.entrypoints].sort();
 			const entriies: Entry[] = [];
-			const outdir = build.config?.outdir ?? './out';
+			const outdir = options.outdir ? options.outdir : build.config?.outdir ?? './out';
 			const resolvedOptions = {
 				forceGenerate: false,
 				...options,
