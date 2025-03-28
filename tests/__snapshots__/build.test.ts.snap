@@ -11,3 +11,51 @@ exports[`build with glob path 1`] = `
 export declare function hello(s: Str): Str;
 "
 `;
+
+exports[`build(set root option) 1`] = `
+"export type Num = number;
+export declare function add(a: number, b: number): number;
+"
+`;
+
+exports[`build (sublayer) 1`] = `
+"export type Num = number;
+export declare function add(a: number, b: number): number;
+"
+`;
+
+exports[`build set outdir 1`] = `
+"export type Num = number;
+export declare function add(a: number, b: number): number;
+"
+`;
+
+exports[`build single entrypoint 1`] = `
+"export type Str = string;
+export declare function hello(s: Str): Str;
+"
+`;
+
+exports[`build with glob entrypoints 1`] = `
+"export type Str = string;
+export declare function hello(s: Str): Str;
+"
+`;
+
+exports[`build nested entrypoint 1`] = `
+"export type Num = number;
+export declare function add(a: number, b: number): number;
+"
+`;
+
+exports[`build with custom outdir 1`] = `
+"export type Num = number;
+export declare function add(a: number, b: number): number;
+"
+`;
+
+exports[`build with custom outdir and root 1`] = `
+"export type Num = number;
+export declare function add(a: number, b: number): number;
+"
+`;
