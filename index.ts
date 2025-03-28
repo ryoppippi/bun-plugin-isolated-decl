@@ -33,7 +33,8 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 		async setup(build): Promise<void> {
 			const entrypoints = [...build.config.entrypoints].sort();
 			const entriies: Entry[] = [];
-			const outdir = (options.outdir != null) ? options.outdir : build.config?.outdir ?? './out';
+			const _basedir = build.config?.outdir ?? './out';
+			const outdir = (options.outdir != null) ? path.join(_basedir, options.outdir) : _basedir;
 			const resolvedOptions = {
 				forceGenerate: false,
 				...options,
@@ -76,7 +77,9 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 					}
 				}
 				const root = build.config?.root ?? '';
-				const dtsID = path.relative(root, id.replace(/^.*\s/, '').replace(/\.[jtm]s$/, '.d.ts'));
+				const dtsID = (root.length > 0)
+					? path.relative(root, id).replace(/\.[jtm]s$/, '.d.ts')
+					: path.basename(id).replace(/\.[jtm]s$/, '.d.ts');
 				const _savepath = path.resolve(outdir, dtsID);
 				const _dirpath = path.dirname(_savepath);
 				await mkdir(_dirpath, { recursive: true });
