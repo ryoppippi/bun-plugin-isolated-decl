@@ -32,7 +32,7 @@
 		"format": "nr lint --fix"
 	},
 	"peerDependencies": {
-		"typescript": "^5.8.2"
+		"typescript": "^5.8.3"
 	},
 	"dependencies": {
 		"is-glob": "^4.0.3",
