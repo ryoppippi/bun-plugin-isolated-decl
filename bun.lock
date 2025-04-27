@@ -6,7 +6,7 @@
       "dependencies": {
         "is-glob": "^4.0.3",
         "oxc-transform": "^0.66.0",
-        "unplugin-isolated-decl": "^0.13.9",
+        "unplugin-isolated-decl": "^0.13.10",
       },
       "devDependencies": {
         "@antfu/ni": "^24.3.0",
