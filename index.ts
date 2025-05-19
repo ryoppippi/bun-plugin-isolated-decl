@@ -1,6 +1,7 @@
+import type { BunPlugin } from 'bun';
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { type BunPlugin, Glob } from 'bun';
+import { Glob } from 'bun';
 // @ts-expect-error no type
 import _isGlob from 'is-glob';
 import { oxcTransform } from 'unplugin-isolated-decl/api';

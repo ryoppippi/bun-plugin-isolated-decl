@@ -1,52 +1,52 @@
 {
-  "name": "bun-plugin-isolated-decl",
-  "type": "module",
-  "version": "0.2.2",
-  "author": "@ryoppippi",
-  "license": "ISC",
-  "homepage": "https://github.com/ryoppippi/bun-plugin-isolated-decl",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ryoppippi/bun-plugin-isolated-decl.git"
-  },
-  "keywords": [
-    "bun",
-    "oxc",
-    "dts",
-    "bun-plugin",
-    "bun-plugin-isolated-decl"
-  ],
-  "exports": {
-    ".": "./index.ts"
-  },
-  "module": "index.ts",
-  "files": [
-    "index.ts"
-  ],
-  "scripts": {
-    "typecheck": "tsc --noEmit",
-    "test": "bun test",
-    "release": "nr test && nr typecheck && nlx bumpp",
-    "prepublishOnly": "nr test && nr typecheck",
-    "lint": "eslint --cache .",
-    "format": "nr lint --fix"
-  },
-  "peerDependencies": {
-    "typescript": "^5.8.3"
-  },
-  "dependencies": {
-    "is-glob": "^4.0.3",
-    "oxc-transform": "^0.70.0",
-    "unplugin-isolated-decl": "^0.14.1"
-  },
-  "devDependencies": {
-    "@antfu/ni": "^24.3.0",
-    "@ryoppippi/eslint-config": "^0.3.7",
-    "@types/bun": "latest",
-    "eslint": "^9.27.0",
-    "eslint-plugin-format": "^1.0.1"
-  },
-  "trustedDependencies": [
-    "unrs-resolver"
-  ]
+	"name": "bun-plugin-isolated-decl",
+	"type": "module",
+	"version": "0.2.2",
+	"author": "@ryoppippi",
+	"license": "ISC",
+	"homepage": "https://github.com/ryoppippi/bun-plugin-isolated-decl",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ryoppippi/bun-plugin-isolated-decl.git"
+	},
+	"keywords": [
+		"bun",
+		"oxc",
+		"dts",
+		"bun-plugin",
+		"bun-plugin-isolated-decl"
+	],
+	"exports": {
+		".": "./index.ts"
+	},
+	"module": "index.ts",
+	"files": [
+		"index.ts"
+	],
+	"scripts": {
+		"typecheck": "tsc --noEmit",
+		"test": "bun test",
+		"release": "nr test && nr typecheck && nlx bumpp",
+		"prepublishOnly": "nr test && nr typecheck",
+		"lint": "eslint --cache .",
+		"format": "nr lint --fix"
+	},
+	"peerDependencies": {
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"is-glob": "^4.0.3",
+		"oxc-transform": "^0.70.0",
+		"unplugin-isolated-decl": "^0.14.1"
+	},
+	"devDependencies": {
+		"@antfu/ni": "^24.3.0",
+		"@ryoppippi/eslint-config": "^0.3.7",
+		"@types/bun": "latest",
+		"eslint": "^9.27.0",
+		"eslint-plugin-format": "^1.0.1"
+	},
+	"trustedDependencies": [
+		"unrs-resolver"
+	]
 }
