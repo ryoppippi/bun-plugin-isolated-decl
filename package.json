@@ -26,8 +26,8 @@
 	"scripts": {
 		"typecheck": "tsc --noEmit",
 		"test": "bun test",
-		"release": "nr test && nr typecheck && nlx bumpp",
-		"prepublishOnly": "nr test && nr typecheck",
+		"release": "nr test && nr typecheck && bumpp",
+		"prepack": "clean-pkg-json",
 		"lint": "eslint --cache .",
 		"format": "nr lint --fix"
 	},
@@ -44,6 +44,8 @@
 		"@antfu/ni": "^24.3.0",
 		"@ryoppippi/eslint-config": "^0.3.7",
 		"@types/bun": "latest",
+		"bumpp": "^10.1.1",
+		"clean-pkg-json": "^1.3.0",
 		"eslint": "^9.27.0",
 		"eslint-plugin-format": "^1.0.1"
 	},
