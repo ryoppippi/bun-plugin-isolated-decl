@@ -5,6 +5,7 @@ import { Glob } from 'bun';
 // @ts-expect-error no type
 import _isGlob from 'is-glob';
 import { oxcTransform } from 'unplugin-isolated-decl/api';
+import 'bun-only';
 
 // eslint-disable-next-line ts/no-unsafe-assignment
 const isGlob: (str: string) => boolean = _isGlob;
