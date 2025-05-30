@@ -38,7 +38,7 @@
 		"unplugin-isolated-decl": "^0.14.2"
 	},
 	"devDependencies": {
-		"@antfu/ni": "^24.3.0",
+		"@antfu/ni": "^25.0.0",
 		"@ryoppippi/eslint-config": "^0.3.7",
 		"@types/bun": "latest",
 		"@typescript/native-preview": "^7.0.0-dev.20250527.1",
