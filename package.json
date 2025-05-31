@@ -34,7 +34,7 @@
 	"dependencies": {
 		"bun-only": "^0.0.1",
 		"is-glob": "^4.0.3",
-		"oxc-transform": "^0.72.0",
+		"oxc-transform": "^0.72.1",
 		"unplugin-isolated-decl": "^0.14.2"
 	},
 	"devDependencies": {
