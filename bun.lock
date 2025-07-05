@@ -7,7 +7,7 @@
         "bun-only": "^0.0.1",
         "is-glob": "^4.0.3",
         "oxc-transform": "^0.75.0",
-        "unplugin-isolated-decl": "^0.14.4",
+        "unplugin-isolated-decl": "^0.14.5",
       },
       "devDependencies": {
         "@antfu/ni": "^25.0.0",
@@ -810,7 +810,7 @@
 
     "unplugin": ["unplugin@2.3.5", "", { "dependencies": { "acorn": "^8.14.1", "picomatch": "^4.0.2", "webpack-virtual-modules": "^0.6.2" } }, "sha512-RyWSb5AHmGtjjNQ6gIlA67sHOsWpsbWpwDokLwTcejVdOjEkJZh7QKu14J00gDDVSh8kGH4KYC/TNBceXFZhtw=="],
 
-    "unplugin-isolated-decl": ["unplugin-isolated-decl@0.14.4", "", { "dependencies": { "debug": "^4.4.1", "magic-string": "^0.30.17", "oxc-parser": "^0.75.0", "oxc-transform": "^0.75.0", "unplugin": "^2.3.5", "unplugin-utils": "^0.2.4" }, "peerDependencies": { "@swc/core": "^1.6.6", "typescript": "^5.5.2" }, "optionalPeers": ["@swc/core", "typescript"] }, "sha512-Bp4tnC7tc+XbeO0jW2pyFgja9aNaRsX1GrFn/xcTxzI7S4NaSMF5Sc/qlGKAjy8BUboNOt3ki9vrLhVFdwSlTg=="],
+    "unplugin-isolated-decl": ["unplugin-isolated-decl@0.14.5", "", { "dependencies": { "debug": "^4.4.1", "magic-string": "^0.30.17", "oxc-parser": "^0.75.0", "oxc-transform": "^0.75.0", "unplugin": "^2.3.5", "unplugin-utils": "^0.2.4" }, "peerDependencies": { "@swc/core": "^1.6.6", "typescript": "^5.5.2" }, "optionalPeers": ["@swc/core", "typescript"] }, "sha512-E7ueCNEtTdiPG87QTV0OVE4l2qr3bGLH3tx3eH4f3Rg/dJRB3rh0Sr4z5D1AGJvH0cLxEYsfJtUaJCcAP1PRzQ=="],
 
     "unplugin-utils": ["unplugin-utils@0.2.4", "", { "dependencies": { "pathe": "^2.0.2", "picomatch": "^4.0.2" } }, "sha512-8U/MtpkPkkk3Atewj1+RcKIjb5WBimZ/WSLhhR3w6SsIj8XJuKTacSP8g+2JhfSGw0Cb125Y+2zA/IzJZDVbhA=="],
 
