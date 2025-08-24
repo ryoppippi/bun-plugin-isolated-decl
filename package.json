@@ -1,7 +1,7 @@
 {
 	"name": "bun-plugin-isolated-decl",
 	"type": "module",
-	"version": "0.2.6",
+	"version": "0.2.7",
 	"author": "@ryoppippi",
 	"license": "ISC",
 	"homepage": "https://github.com/ryoppippi/bun-plugin-isolated-decl",
