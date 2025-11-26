@@ -39,7 +39,7 @@
 	},
 	"devDependencies": {
 		"@antfu/ni": "^25.0.0",
-		"@ryoppippi/eslint-config": "^0.3.7",
+		"@ryoppippi/eslint-config": "^0.4.0",
 		"@types/bun": "latest",
 		"@typescript/native-preview": "^7.0.0-dev.20251121.1",
 		"bumpp": "^10.3.1",
