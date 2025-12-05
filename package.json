@@ -1,54 +1,55 @@
 {
-	"name": "bun-plugin-isolated-decl",
-	"type": "module",
-	"version": "0.2.8",
-	"author": "@ryoppippi",
-	"license": "ISC",
-	"homepage": "https://github.com/ryoppippi/bun-plugin-isolated-decl",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ryoppippi/bun-plugin-isolated-decl.git"
-	},
-	"keywords": [
-		"bun",
-		"oxc",
-		"dts",
-		"bun-plugin",
-		"bun-plugin-isolated-decl"
-	],
-	"exports": {
-		".": "./index.ts"
-	},
-	"module": "index.ts",
-	"files": [
-		"index.ts"
-	],
-	"scripts": {
-		"typecheck": "tsgo --noEmit",
-		"test": "bun test",
-		"release": "nr test && nr typecheck && bumpp",
-		"prepack": "clean-pkg-json",
-		"lint": "publint && eslint --cache . ",
-		"format": "nr lint --fix"
-	},
-	"dependencies": {
-		"bun-only": "^0.0.1",
-		"is-glob": "^4.0.3",
-		"oxc-transform": "^0.82.3",
-		"unplugin-isolated-decl": "^0.15.4"
-	},
-	"devDependencies": {
-		"@antfu/ni": "^25.0.0",
-		"@ryoppippi/eslint-config": "^0.4.0",
-		"@types/bun": "latest",
-		"@typescript/native-preview": "^7.0.0-dev.20251121.1",
-		"bumpp": "^10.3.1",
-		"clean-pkg-json": "^1.3.0",
-		"eslint": "^9.35.0",
-		"eslint-plugin-format": "^1.0.1",
-		"publint": "^0.3.15"
-	},
-	"trustedDependencies": [
-		"unrs-resolver"
-	]
+  "name": "bun-plugin-isolated-decl",
+  "type": "module",
+  "version": "0.2.8",
+  "author": "@ryoppippi",
+  "license": "ISC",
+  "homepage": "https://github.com/ryoppippi/bun-plugin-isolated-decl",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryoppippi/bun-plugin-isolated-decl.git"
+  },
+  "keywords": [
+    "bun",
+    "oxc",
+    "dts",
+    "bun-plugin",
+    "bun-plugin-isolated-decl"
+  ],
+  "exports": {
+    ".": "./index.ts"
+  },
+  "module": "index.ts",
+  "files": [
+    "index.ts"
+  ],
+  "scripts": {
+    "typecheck": "tsgo --noEmit",
+    "test": "bun test",
+    "release": "nr test && nr typecheck && bumpp",
+    "prepack": "clean-pkg-json",
+    "lint": "publint && oxfmt --check . && oxlint --type-aware .",
+    "format": "oxfmt . && oxlint --type-aware --fix ."
+  },
+  "dependencies": {
+    "bun-only": "^0.0.1",
+    "is-glob": "^4.0.3",
+    "oxc-transform": "^0.82.3",
+    "unplugin-isolated-decl": "^0.15.4"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^25.0.0",
+    "@ryoppippi/eslint-config": "^0.4.0",
+    "@types/bun": "latest",
+    "@typescript/native-preview": "^7.0.0-dev.20251121.1",
+    "bumpp": "^10.3.1",
+    "clean-pkg-json": "^1.3.0",
+    "oxfmt": "^0.16.0",
+    "oxlint": "^1.31.0",
+    "oxlint-tsgolint": "^0.8.3",
+    "publint": "^0.3.15"
+  },
+  "trustedDependencies": [
+    "unrs-resolver"
+  ]
 }

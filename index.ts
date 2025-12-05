@@ -36,7 +36,7 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 			const entrypoints = [...build.config.entrypoints].sort();
 			const entriies: Entry[] = [];
 			const _basedir = build.config?.outdir ?? './out';
-			const outdir = (options.outdir != null) ? path.join(_basedir, options.outdir) : _basedir;
+			const outdir = options.outdir != null ? path.join(_basedir, options.outdir) : _basedir;
 			const resolvedOptions = {
 				forceGenerate: false,
 				...options,
@@ -54,8 +54,7 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 						const source = await file.text();
 						entriies.push({ id: entry, source });
 					}
-				}
-				else {
+				} else {
 					const file = Bun.file(entry);
 					if (!(await file.exists())) {
 						console.error(`File ${entry} does not exist`);
@@ -79,9 +78,10 @@ function isolatedDecl(options: Options = {}): BunPlugin {
 					}
 				}
 				const root = build.config?.root ?? '';
-				const dtsID = (root.length > 0)
-					? path.relative(root, id).replace(/\.[jtm]s$/, '.d.ts')
-					: path.basename(id).replace(/\.[jtm]s$/, '.d.ts');
+				const dtsID =
+					root.length > 0
+						? path.relative(root, id).replace(/\.[jtm]s$/, '.d.ts')
+						: path.basename(id).replace(/\.[jtm]s$/, '.d.ts');
 				const _savepath = path.resolve(outdir, dtsID);
 				const _dirpath = path.dirname(_savepath);
 				await mkdir(_dirpath, { recursive: true });
