@@ -63,7 +63,6 @@ While both plugins aim to generate declaration files, they have some key differe
 1. **Speed**: `bun-plugin-isolated-decl` is significantly faster than `bun-plugin-dts` due to its use of oxc-transformer instead of tsc.
 
 2. **Compatibility**:
-
    - `bun-plugin-dts` uses tsc and can generate types for all TypeScript code.
    - `bun-plugin-isolated-decl` is optimised for and limited to source code that is compatible with TypeScript 5.5's isolatedDeclarations option.
 

@@ -3,9 +3,7 @@
 		"target": "ESNext",
 		"jsx": "react-jsx",
 		// Enable latest features
-		"lib": [
-			"ESNext"
-		],
+		"lib": ["ESNext"],
 		"moduleDetection": "force",
 		"module": "ESNext",
 		// Bundler mode
@@ -23,6 +21,6 @@
 		"noEmit": true,
 		"isolatedDeclarations": true,
 		"verbatimModuleSyntax": true,
-		"skipLibCheck": true
-	}
+		"skipLibCheck": true,
+	},
 }
