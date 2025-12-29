@@ -35,7 +35,7 @@
 		"bun-only": "^0.0.1",
 		"is-glob": "^4.0.3",
 		"oxc-transform": "^0.82.3",
-		"unplugin-isolated-decl": "^0.15.6"
+		"unplugin-isolated-decl": "^0.15.7"
 	},
 	"devDependencies": {
 		"@antfu/ni": "^25.0.0",
