@@ -47,7 +47,7 @@
 		"oxfmt": "^0.17.0",
 		"oxlint": "^1.32.0",
 		"oxlint-tsgolint": "^0.10.1",
-		"publint": "^0.3.16"
+		"publint": "^0.3.17"
 	},
 	"trustedDependencies": [
 		"unrs-resolver"
